@@ -31,7 +31,7 @@ function Form() {
                 <option>November</option>
                 <option>December</option>
             </select>
-            <button className="btn btn-success" type='submit'>Go</button>
+            <button className="btn btn-success mb-2" type='submit'>Go</button>
         </form>
     );
 }
