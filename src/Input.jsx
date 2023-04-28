@@ -33,45 +33,58 @@ function Form() {
   };
 
   return (
-    <>
-      <form
-        onSubmit={handleSubmit}
-        className="max-w-full flex flex-col p-3 gap-2"
-      >
-        <label className="text-left text-2xl inline-block">Place</label>
-        <input
-          type="text"
-          placeholder="Input Place"
-          className="input input-bordered input-success w-full "
-          onChange={(e) => setplace(e.target.value)}
-        />
-        <labe className="inline-block text-2xl">Month</labe>
-        <select
-          className="select select-success w-full mb-3"
-          onChange={(e) => setmonth(e.target.value)}
-        >
-          <option disabled selected>
-            Pick the Month
-          </option>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-          <option>6</option>
-          <option>7</option>
-          <option>8</option>
-          <option>9</option>
-          <option>10</option>
-          <option>11</option>
-          <option>12</option>
-        </select>
-        <button className="btn btn-success" type="submit">
-          Go
-        </button>
-      </form>
+    <section className="Landing">
+      <div className="hero min-h-screen bg-base-200">
+        <div className="hero-content flex-col lg:flex-row-reverse">
+          <div className="text-center lg:text-left">
+            <h1 className="text-5xl font-bold">Get circular</h1>
+            <p className="py-6 text-2">
+              Please input the Place and month in which you want to visit the
+              place
+            </p>
+          </div>
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+            <form
+              onSubmit={handleSubmit}
+              className="max-w-full flex flex-col p-3 gap-2"
+            >
+              <label className="text-left text-2xl inline-block">Place</label>
+              <input
+                type="text"
+                placeholder="Input Place"
+                className="input input-bordered input-success w-full "
+                onChange={(e) => setplace(e.target.value)}
+              />
+              <labe className="inline-block text-2xl">Month</labe>
+              <select
+                className="select select-success w-full mb-3"
+                onChange={(e) => setmonth(e.target.value)}
+              >
+                <option disabled selected>
+                  Pick the Month
+                </option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+              </select>
+              <button className="btn btn-success" type="submit">
+                Go
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
       {temp1}
-    </>
+    </section>
   );
 }
 

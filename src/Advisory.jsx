@@ -1,19 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import Record from "./List";
-const advisory = function (props) {
-    return <section className="mt-1 mx-auto flex flex-col lg:flex-row p-4 bg-transparent w-3/4">
-        <div className="flex flex-col w-full lg:flex-row">
-            <div className="grid flex-grow h-32 card bg-base-300 rounded-box place-items-center">
-                <Record data={props.data}/>
+import generateTravelAdvisory from './getAPI';
+
+const Advisiory = function (props) {
+    console.log("advisory is reached", props);
+    const [generatedText, setGeneratedText] = useState('');
+    // Fetch the travel advisory and update the intermediate generated text
+    const fetchTravelAdvisory = async (location, month, crimeData) => {
+        console.log("gpt button");
+        try {
+            const text = await generateTravelAdvisory(location, month, crimeData);
+            setGeneratedText(text);
+        } catch (error) {
+            setGeneratedText('AI is OFFLINE');
+        }
+    };
+    return <section className="p-4 ">
+        <h3 className="text-5xl text-gray-400 pb-3">Total Number of Crime : {props.data.totalCrimes}</h3>
+        <section className="mt-1 mx-auto flex flex-col lg:flex-row lg:justify-center" >
+            <div className="lg:mx-2">
+                <Record data={props.data} />
+                <button className="btn btn-active btn-accent ml-2" onClick={fetchTravelAdvisory}>Generate AI advisory</button>
             </div>
-            <div className="divider lg:divider-horizontal">And</div>
-            <div className="grid flex-grow h-32 card bg-base-300 rounded-box place-items-center">
-                <h1 className="font-normal text-left text-xl to-gray-400">Final Advice</h1>
-                <p className="text-base bg-slate-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, commodi aspernatur porro labore laboriosam minus mollitia quam ratione iste soluta ipsa delectus? Nisi repellat perferendis maxime molestiae quibusdam molestias eligendi.</p>
-            </div>
-        </div>
+            <div>{generatedText}</div>
+        </section>
     </section>
 
 };
 
-export default advisory
+export default Advisiory;
