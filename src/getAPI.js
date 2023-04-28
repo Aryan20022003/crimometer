@@ -1,3 +1,17 @@
+const months = {
+  1: "Jan",
+  2: "Feb",
+  3: "Mar",
+  4: "Apr",
+  5: "May",
+  6: "Jun",
+  7: "Jul",
+  8: "Aug",
+  9: "Sep",
+  10: "Oct",
+  11: "Nov",
+  12: "Dec",
+};
 const generateTravelAdvisory = async (
   location,
   month,
@@ -18,7 +32,7 @@ const generateTravelAdvisory = async (
   }
   // console.log(dataString);
   // return "hello gpt";
-  const prompt = `Generate a travel advisory for ${location} during the month of ${month}. The crime data for this period is as follows:
+  const prompt = `Generate a travel advisory for ${location} during the month of ${months[month]}. The crime data for this period is as follows:
   type_of_crime: count, rate [(current crime/total crime)*100]
   ${dataString}.
   Provide a concise and informative summary of the safety risks and guidelines for travelers separated by points, mainly focus on the crimes above 50% rate and also provide strict advisory when more than 10 for a case, semi strict when less than 5 crime, very less strict when less than 2 and safe when no cases are there.follow a consistent format.
