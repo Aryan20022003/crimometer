@@ -3,9 +3,9 @@ import Record from "./List";
 import generateTravelAdvisory from './getAPI';
 
 const Advisiory = function (props) {
-    console.log("advisory is reached", props);
     const [generatedText, setGeneratedText] = useState('');
     // Fetch the travel advisory and update the intermediate generated text
+    console.log(props.data.location, "props.data");
     const fetchTravelAdvisory = async (location, month, crimeData) => {
         console.log("gpt button");
         try {

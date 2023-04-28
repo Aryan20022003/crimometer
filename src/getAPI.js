@@ -5,7 +5,7 @@ const generateTravelAdvisory = async (
   onProgress
 ) => {
   console.log("fuck you crime");
-  // return "hello gpt";
+  return "hello gpt";
   // const prompt = `Generate a travel advisory for ${location} during the month of ${month}. The crime data for this period is as follows: ${crimeData}. Provide a concise and informative summary of the safety risks and guidelines for travelers.`;
   const prompt = `Generate a travel advisory for ${"agartala"} during the month of ${"9"}. The crime data for this period is as follows: ${[
     { rape: 10, murder: 50 },
@@ -30,7 +30,7 @@ const generateTravelAdvisory = async (
 
   try {
     const response = await fetch(
-      'https://api.openai.com/v1/engines/text-ada-001/completions',
+      // "https://api.openai.com/v1/engines/text-ada-001/completions",
       requestOptions
     );
 
