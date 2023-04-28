@@ -19,6 +19,8 @@ const monthNames = [
 const Advisiory = function (props) {
   const [generatedText, setGeneratedText] = useState('');
   const { location, month, crimes: crimeData, totalCrimes } = props.data;
+  const [generatedText, setGeneratedText] = useState('');
+  const { location, month, crimes: crimeData, totalCrimes } = props?.data;
 
   if (totalCrimes === 0) {
     return (
@@ -44,16 +46,14 @@ const Advisiory = function (props) {
         Total Number of Crime : {totalCrimes}
       </h3>
       <section className="mt-1 mx-auto flex flex-col lg:flex-row lg:gap-10 lg:justify-center">
-        <div className="lg:mx-2 flex flex-col justify-center align-middle">
+        <div className="lg:mx-2 centerCustom">
           <Record data={props.data} />
-          <div className="flex justify-center align-middle">
-            <button
-              className="btn btn-success btn-accent"
-              onClick={fetchTravelAdvisory}
-            >
-              Generate AI advisory
-            </button>
-          </div>
+          <button
+            className="btn btn-success btn-accent"
+            onClick={fetchTravelAdvisory}
+          >
+            Generate AI advisory
+          </button>
         </div>
         {generatedText ? <ResponseCard data={generatedText} /> : null}
       </section>
