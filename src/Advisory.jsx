@@ -18,6 +18,8 @@ const monthNames = [
 ];
 const Advisiory = function (props) {
   const [generatedText, setGeneratedText] = useState('');
+  const [loading, setLoading] = useState(false); // Add loading state
+  const [generated, setGenerated] = useState(false);
   const { location, month, crimes: crimeData, totalCrimes } = props.data;
 
   if (totalCrimes === 0) {
@@ -29,13 +31,17 @@ const Advisiory = function (props) {
   }
 
   const fetchTravelAdvisory = async () => {
+    setLoading(true); // Set loading to true on fetch start
     console.log('gpt button');
     try {
       const text = await generateTravelAdvisory(location, month, crimeData);
       setGeneratedText(text);
     } catch (error) {
       setGeneratedText('AI is OFFLINE');
-    }
+    } finally {
+      setLoading(false);
+      setGenerated(true);
+    } // Set loading to false on fetch end
   };
 
   return (
@@ -46,12 +52,19 @@ const Advisiory = function (props) {
       <section className="mt-1 mx-auto flex flex-col lg:flex-row lg:gap-10 lg:justify-center">
         <div className="lg:mx-2 centerCustom">
           <Record data={props.data} />
-          <button
-            className="btn btn-success btn-accent"
-            onClick={fetchTravelAdvisory}
-          >
-            Generate AI advisory
-          </button>
+          <div className="flex justify-center">
+            <button
+              className="btn btn-success btn-accent"
+              onClick={fetchTravelAdvisory}
+              disabled={loading || generated}
+            >
+              {generated
+                ? 'AI Advisory already generated'
+                : loading
+                ? 'Loading...'
+                : 'Generate AI advisory'}
+            </button>
+          </div>
         </div>
         {generatedText ? <ResponseCard data={generatedText} /> : null}
       </section>
