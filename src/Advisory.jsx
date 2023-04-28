@@ -5,8 +5,10 @@ import generateTravelAdvisory from './getAPI';
 const Advisiory = function (props) {
     const [generatedText, setGeneratedText] = useState('');
     // Fetch the travel advisory and update the intermediate generated text
-    console.log(props.data.location, "props.data");
-    const fetchTravelAdvisory = async (location, month, crimeData) => {
+    const { location, month, crimes: crimeData } = props.data;
+    console.log("hello world");
+    console.log(location, month, crimeData,);
+    const fetchTravelAdvisory = async () => {
         console.log("gpt button");
         try {
             const text = await generateTravelAdvisory(location, month, crimeData);
