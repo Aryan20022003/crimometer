@@ -2,20 +2,34 @@ import React, { useState } from 'react';
 import getCrimeData from './logic';
 import Advisiory from './Advisory';
 
+// function Form() {
+//   const [place, setplace] = useState('');
+//   const [month, setmonth] = useState(1);
+//   const [temp1, settemp] = useState(null);
+//   const handleSubmit = (event) => {
+//     event.preventDefault();
+//     const temp = getCrimeData(place, month);
+//     console.log('after this');
+//     console.log(temp);
+//     settemp([<Advisiory data={temp} />]);
+//   };
+
 function Form() {
   const [place, setplace] = useState('');
   const [month, setmonth] = useState(1);
   const [temp1, settemp] = useState(null);
-  const handleSubmit = (event) => {
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // alert("got it");
-    // Example usage
-    // console.log(place, month);
-    const temp = getCrimeData(place, month);
-    // alert(temp);
-    console.log("after this");
-    console.log(temp);
-    settemp([<Advisiory data={temp} />]);
+    try {
+      const temp = await getCrimeData(place, month);
+      console.log('after this');
+      console.log(temp);
+      // settemp([<Advisory data={temp} />]);
+      settemp([<Advisiory data={temp} />]);
+    } catch (error) {
+      console.error('Error in handleSubmit:', error);
+    }
   };
 
   return (
@@ -58,7 +72,6 @@ function Form() {
       </form>
       {temp1}
     </>
-
   );
 }
 
