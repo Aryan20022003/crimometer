@@ -19,8 +19,6 @@ const monthNames = [
 const Advisiory = function (props) {
   const [generatedText, setGeneratedText] = useState('');
   const { location, month, crimes: crimeData, totalCrimes } = props.data;
-  const [generatedText, setGeneratedText] = useState('');
-  const { location, month, crimes: crimeData, totalCrimes } = props?.data;
 
   if (totalCrimes === 0) {
     return (
