@@ -51,7 +51,7 @@ const generateTravelAdvisory = async (
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer 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`,
+      Authorization: `Bearer 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`,
     },
     body: JSON.stringify(requestBody),
   };
