@@ -18,7 +18,7 @@ const monthNames = [
 ];
 const Advisiory = function (props) {
     const [generatedText, setGeneratedText] = useState('');
-    const { location, month, crimes: crimeData, totalCrimes } = props.data;
+    const { location, month, crimes: crimeData, totalCrimes } = props?.data;
 
     if (totalCrimes === 0) {
         return <h3 className="text-5xl text-gray-400 pb-3 text-center pt-5 pb-5">{`No crime during ${monthNames[month - 1]}`}</h3>;
@@ -40,7 +40,10 @@ const Advisiory = function (props) {
             <section className="mt-1 mx-auto flex flex-col lg:flex-row lg:gap-10 lg:justify-center" >
                 <div className="lg:mx-2 centerCustom">
                     <Record data={props.data} />
-                    <button className="btn btn-success btn-accent" onClick={fetchTravelAdvisory}>Generate AI advisory</button>
+                    <div className='flex justify-center align-middle'>
+                        <button className="btn btn-success btn-accent w-52 h-8" onClick={fetchTravelAdvisory}>Generate AI advisory</button>
+
+                    </div>
                 </div>
                 {generatedText ? <ResponseCard data={generatedText} /> : null}
             </section>
