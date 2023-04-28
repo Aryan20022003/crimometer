@@ -15,7 +15,7 @@ import Advisiory from './Advisory';
 //   };
 
 function Form() {
-  const [place, setplace] = useState('');
+  const [place, setplace] = useState('agartala');
   const [month, setmonth] = useState(1);
   const [temp1, settemp] = useState(null);
 
@@ -52,6 +52,7 @@ function Form() {
               <input
                 type="text"
                 placeholder="Input Place"
+                defaultValue="agartala"
                 className="input input-bordered input-success w-full "
                 onChange={(e) => setplace(e.target.value)}
               />
@@ -63,18 +64,18 @@ function Form() {
                 <option disabled selected>
                   Pick the Month
                 </option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-                <option>11</option>
-                <option>12</option>
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
               </select>
               <button className="btn btn-success" type="submit">
                 Go

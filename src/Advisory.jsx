@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Record from './List';
 import generateTravelAdvisory from './getAPI';
+import ResponseCard from './ResponseCard';
 
 const Advisiory = function (props) {
   const [generatedText, setGeneratedText] = useState('');
@@ -31,7 +32,6 @@ const Advisiory = function (props) {
       setGeneratedText('AI is OFFLINE');
     }
   };
-
   // Add this function to handle intermediate text updates
   const updateGeneratedText = (intermediateText) => {
     setGeneratedText(intermediateText);
@@ -41,7 +41,7 @@ const Advisiory = function (props) {
       <h3 className="text-5xl text-gray-400 pb-3">
         Total Number of Crime : {props.data.totalCrimes}
       </h3>
-      <section className="mt-1 mx-auto flex flex-col lg:flex-row lg:justify-center">
+      <section className="mt-1 mx-auto flex flex-col lg:flex-row lg:gap-10 lg:justify-center">
         <div className="lg:mx-2">
           <Record data={props.data} />
           <button
@@ -51,7 +51,7 @@ const Advisiory = function (props) {
             Generate AI advisory
           </button>
         </div>
-        <div style={{ whiteSpace: 'pre-wrap' }}>{generatedText}</div>
+        <ResponseCard data={generatedText} />
       </section>
     </section>
   );

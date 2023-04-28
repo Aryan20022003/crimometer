@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+
+/* Modern-looking scrollbar for webkit-based browsers */
+::-webkit-scrollbar {
+  width: 8px; /* adjust as needed */
+  height: 8px; /* adjust as needed */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Modern-looking scrollbar for Firefox */
+::-moz-scrollbar {
+  width: 8px; /* adjust as needed */
+  height: 8px; /* adjust as needed */
+}
+
+::-moz-scrollbar-track {
+  background: transparent;
+}
+
+::-moz-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
