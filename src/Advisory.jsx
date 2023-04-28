@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import Record from "./List";
+import React, { useState } from 'react';
+import Record from './List';
 import generateTravelAdvisory from './getAPI';
 import ResponseCard from "./ResponseCard";
 const monthNames = [
