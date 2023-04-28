@@ -30,7 +30,7 @@ const generateTravelAdvisory = async (
 
   try {
     const response = await fetch(
-      "https://api.openai.com/v1/engines/davinci-codex/completions",
+      'https://api.openai.com/v1/engines/text-ada-001/completions',
       requestOptions
     );
 
