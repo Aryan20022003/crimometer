@@ -41,7 +41,9 @@ function Form() {
                 placeholder="Input Place"
                 defaultValue="agartala"
                 className="input input-bordered input-success w-full "
-                onChange={(e) => setplace(e.target.value)}
+                onChange={(e) =>
+                  setplace(e.target.value.toLocaleLowerCase().trim())
+                }
               />
               <labe className="inline-block text-2xl">Month</labe>
               <select
