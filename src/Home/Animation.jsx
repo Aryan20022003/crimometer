@@ -1,21 +1,9 @@
-import React, { useRef, useEffect } from "react";
-import lottie from "lottie-web";
-import animationData from "./animation.json"
-
-const LottieAnimation = () => {
-    const container = useRef(null);
-
-    useEffect(() => {
-        lottie.loadAnimation({
-            container: container.current,
-            renderer: "svg",
-            loop: true,
-            autoplay: true,
-            animationData: animationData,
-        });
-    }, []);
-
-    return <div ref={container}></div>;
-};
-
-export default LottieAnimation;
+import React from "react";
+import Lottie from "lottie-react";
+import LottieAnimation from "./animation.json";
+function HeroLottie() {
+    return <div className="custom-backdrop-loader p-8">
+        <Lottie animationData={LottieAnimation} className="" />
+    </div>
+}
+export default HeroLottie;
