@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 body {
+  height: 100vh;
   background: #141e30; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     315deg,
