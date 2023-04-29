@@ -3,9 +3,7 @@ import Form from './Input';
 
 const Landing = () => {
   return (
-
     <Form />
-
   );
 };
 export default Landing;
