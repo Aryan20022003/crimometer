@@ -47,11 +47,12 @@ const generateTravelAdvisory = async (
     temperature: 0,
   };
 
+  const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
   const requestOptions = {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer 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`,
+      Authorization: `Bearer ${apiKey}`,
     },
     body: JSON.stringify(requestBody),
   };

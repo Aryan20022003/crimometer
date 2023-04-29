@@ -1,8 +1,18 @@
 module.exports = {
-  content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
+  content: ['./src/**/*.{html,js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Rubik', 'sans-serif', 'ui-sans-serif', 'system-ui'], // Add 'Rubik' font here
+      },
+    },
   },
-  // plugins: [],
-  plugins: [require("daisyui")],
+  variants: {},
+  plugins: [require('daisyui')],
+  daisyui: {
+    styled: true,
+    themes: true,
+    rtl: false,
+  },
+  // plugins: [require("daisyui")],
 };

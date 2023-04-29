@@ -2,18 +2,6 @@ import React, { useState } from 'react';
 import getCrimeData from './logic';
 import Advisiory from './Advisory';
 
-// function Form() {
-//   const [place, setplace] = useState('');
-//   const [month, setmonth] = useState(1);
-//   const [temp1, settemp] = useState(null);
-//   const handleSubmit = (event) => {
-//     event.preventDefault();
-//     const temp = getCrimeData(place, month);
-//     console.log('after this');
-//     console.log(temp);
-//     settemp([<Advisiory data={temp} />]);
-//   };
-
 function Form() {
   const [place, setplace] = useState('agartala');
   const [month, setmonth] = useState(1);
@@ -25,7 +13,6 @@ function Form() {
       const temp = await getCrimeData(place, month);
       console.log('after this');
       console.log(temp);
-      // settemp([<Advisory data={temp} />]);
       settemp([<Advisiory data={temp} />]);
     } catch (error) {
       console.error('Error in handleSubmit:', error);
@@ -37,10 +24,10 @@ function Form() {
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Get circular</h1>
+            <h1 className="text-5xl font-bold font-sans">Get circular</h1>
             <p className="py-6 text-2">
-              Please input the Place and month in which you want to visit the
-              place
+              Please input the Place you want to visit with the month of
+              visiting
             </p>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
