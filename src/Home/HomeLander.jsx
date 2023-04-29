@@ -1,5 +1,6 @@
 import React from 'react';
 import LottieAnimation from './Animation.jsx';
+import { Link } from 'react-router-dom';
 import './HomeLander.css';
 
 const Home = () => {
@@ -18,6 +19,11 @@ const Home = () => {
             realizing this vision.
           </p>
         </blockquote>
+        <Link to="/generate">
+          <button className="btn btn-success mt-4 rounded-full">
+            Try Crimo Meter
+          </button>
+        </Link>
       </div>
       <div className="Animation">
         <LottieAnimation />
