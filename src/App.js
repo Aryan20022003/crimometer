@@ -1,11 +1,13 @@
 import React from "react";
 import Landing from "./Hero";
-import Advisory from "./Advisory";
-
+import Nav from "./Nav";
+import Home from "./Home/HomeLander";
 function App() {
   return (
     <>
-      <Landing/>
+      <Nav />
+      <Home />
+      <Landing />
     </>
   );
 }
