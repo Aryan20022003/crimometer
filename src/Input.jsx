@@ -20,8 +20,8 @@ function Form() {
   };
 
   return (
-    <section className="Landing h-80vh">
-      <div className="hero min-h-screen bg-base-200">
+    <section className="Landing h-100vh">
+      <div className="hero min-h-screen bg-transparent">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold font-sans">Get circular</h1>
@@ -30,7 +30,7 @@ function Form() {
               visiting
             </p>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl" style={{ background: "#141e30" }}>
             <form
               onSubmit={handleSubmit}
               className="max-w-full flex flex-col p-3 gap-2"
