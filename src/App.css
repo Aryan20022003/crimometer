@@ -68,3 +68,17 @@
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+.custom-bg-color {
+  background: #141e30; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    315deg,
+    #243b55,
+    #141e30
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    315deg,
+    #243b55,
+    #141e30
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
