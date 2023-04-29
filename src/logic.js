@@ -34,6 +34,8 @@ export default async function getCrimeData(location, month) {
   }));
 
   return {
+    location,
+    month,
     totalCrimes,
     crimes,
   };
