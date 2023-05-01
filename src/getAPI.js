@@ -34,14 +34,23 @@ const generateTravelAdvisory = async (
   //   ${dataString}.
   //   Provide a concise and informative summary of the safety risks and guidelines for travelers separated by points, mainly focus on the crimes above 50% rate and also provide strict advisory when more than 10 for a case, semi strict when less than 5 crime, very less strict when less than 2 and safe when no cases are there.follow a consistent format.
   // `;
+  //   const prompt = `Generate a travel advisory for ${location} in ${months[month]}, considering crime data in format:
+  // type_of_crime: count, rate [(current crime/total crime)*100]
+  // ${dataString}.
+  // Provide a short summary & most likely to occur crimes in very short(keep as short as possible & make different points). then give guidelines for travelers, focusing on crimes with rates above 20% and applying strictness levels: >10 cases: strict; <5 cases: semi-strict; <2 cases: very less strict; less then 1 cases: safe. focus more on the strict cases during providing advisory. tell bit about how safe the place is for women. Follow the Indian advisory format.`;
+  // const prompt = `Generate a travel advisory for ${location} in ${months[month]}, considering crime data in format:
+  // type_of_crime: count, rate [(current crime/total crime)*100]
+  // ${dataString}.
+  // Provide a summary of safety risks in very short(keep as short as possible). then give guidelines for travelers, focusing on crimes with rates above 20% and applying strictness levels: >10 cases: strict; <5 cases: semi-strict; <2 cases: very less strict; less then 1 cases: safe. focus more on the strict cases during providing advisory. tell bit about how safe the place is for women. Follow the Indian advisory format.`;
+
   const prompt = `Generate a travel advisory for ${location} in ${months[month]}, considering crime data in format:
   type_of_crime: count, rate [(current crime/total crime)*100]
   ${dataString}.
-  Provide a summary of safety risks in very short. then give guidelines for travelers, focusing on crimes with rates above 50% and applying strictness levels: >10 cases: strict; <5 cases: semi-strict; <2 cases: very less strict; 0 cases: safe. focus more on the strict cases during providing advisory. Follow the Indian advisory format.`;
+  give a brief summary without using any of the data in the summary. focus more on this part : provide guidelines for travelers, focusing on crimes with rates above 20% and applying strictness levels: >10 cases: strict; <5 cases: semi-strict; <2 cases: very less strict; less then 1 cases: safe (these parameters are only for your reference no need to provide them in advisory). focus more on the strict cases during providing advisory & provide guidelines in points. tell bit about how safe the place is for women. Follow the Indian advisory format.`;
 
   const requestBody = {
     prompt: prompt,
-    max_tokens: 250,
+    max_tokens: 400,
     n: 1,
     stop: null,
     temperature: 0,
