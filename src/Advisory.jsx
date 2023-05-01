@@ -52,6 +52,10 @@ const Advisory = function (props) {
       <section className="mt-1 mx-auto flex flex-col lg:flex-row lg:gap-10 lg:justify-center">
         <div className="lg:mx-2 centerCustom">
           <Record data={props.data} />
+          <p className="pb-4">
+            # once you click Generate Advisory wait around 1 minutes to get
+            Advisory
+          </p>
           <div className="flex justify-center">
             <button
               className="btn btn-success btn-accent"

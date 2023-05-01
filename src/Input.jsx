@@ -36,10 +36,6 @@ function Form() {
             <p>So for testing try location Delhi or mumbai with any month</p>
             <p>or agartala with month of September</p>
             <p>when more data is loaded in backend anything can be used. ***</p>
-            <p>
-              # once you click Generate Advisory wait around 1 minutes to get
-              Advisory
-            </p>
           </div>
           <div
             className="card flex-shrink-0 w-full max-w-sm shadow-2xl"
