@@ -3,7 +3,7 @@ import getCrimeData from './logic';
 import Advisiory from './Advisory';
 
 function Form() {
-  const [place, setplace] = useState('agartala');
+  const [place, setplace] = useState('delhi');
   const [month, setmonth] = useState(1);
   const [temp1, settemp] = useState(null);
 
@@ -29,8 +29,18 @@ function Form() {
               Please input the Place you want to visit with the month of
               visiting
             </p>
+            <p>
+              *** Due to time constrain much data in backend could not be
+              loaded.
+            </p>
+            <p>So for testing try location Delhi or mumbai with any month</p>
+            <p>or agartala with month of September</p>
+            <p>when more data is loaded in backend anything can be used. ***</p>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl" style={{ background: "#141e30" }}>
+          <div
+            className="card flex-shrink-0 w-full max-w-sm shadow-2xl"
+            style={{ background: '#141e30' }}
+          >
             <form
               onSubmit={handleSubmit}
               className="max-w-full flex flex-col p-3 gap-2"
@@ -39,7 +49,7 @@ function Form() {
               <input
                 type="text"
                 placeholder="Input Place"
-                defaultValue="agartala"
+                defaultValue="Delhi"
                 className="input input-bordered input-success w-full "
                 onChange={(e) =>
                   setplace(e.target.value.toLocaleLowerCase().trim())
@@ -47,6 +57,7 @@ function Form() {
               />
               <labe className="inline-block text-2xl">Month</labe>
               <select
+                defaultValue={'1'}
                 className="select select-success w-full mb-3"
                 onChange={(e) => setmonth(e.target.value)}
               >

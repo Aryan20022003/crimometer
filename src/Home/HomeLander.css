@@ -3,6 +3,7 @@
   font-size: 3.5rem;
   line-height: 4.5rem;
   word-spacing: 0.05rem;
+  height: 13rem;
 }
 
 .quote {
@@ -35,9 +36,48 @@
   color: #3b82f6;
 }
 
-@media (max-width: 675px) {
+@media (max-width: 1200px) {
+  .title {
+    font-size: 3rem;
+    line-height: 4rem;
+    height: 15rem;
+  }
+  .quote {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 940px) {
   .title {
     font-size: 2.5rem;
+    line-height: 3.5rem;
+    height: 13.5rem;
+  }
+}
+
+@media (max-width: 840px) {
+  .title {
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+    height: 17rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+    height: 7.5rem;
+  }
+}
+
+@media (max-width: 675px) {
+  .title {
+    font-size: 2.3rem;
     line-height: 3rem;
+    height: 9rem;
+  }
+  .quote {
+    font-size: 0.97rem;
   }
 }
