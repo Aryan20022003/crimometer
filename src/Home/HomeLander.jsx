@@ -7,7 +7,7 @@ import './HomeLander.css';
 const Home = () => {
   return (
     <>
-      <section className="flex flex-col-reverse gap-2 md:flex-row  w-11/12 mx-auto mt-4 py-11">
+      <section className="flex flex-col-reverse gap-2 md:flex-row w-11/12 mx-auto mt-4 md:py-11">
         <div className="content md:w-1/2">
           <h1 className="title">
             Keeping You Safe: The Power of{' '}
