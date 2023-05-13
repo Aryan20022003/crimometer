@@ -19,8 +19,10 @@ export default async function getCrimeData(location, month) {
   console.log('Fetched data:', data);
 
   // Calculate total crimes and crime counts per category
+  const crimeDiscription={};
   const crimeCounts = data.reduce((counts, crime) => {
     counts[crime.crimetype] = (counts[crime.crimetype] || 0) + 1;
+    crimeDiscription[crime.crimetype]=(crimeDiscription[crime.crimetype] || []).push(crime.description);
     return counts;
   }, {});
 
@@ -38,5 +40,6 @@ export default async function getCrimeData(location, month) {
     month,
     totalCrimes,
     crimes,
+    crimeDiscription
   };
 }

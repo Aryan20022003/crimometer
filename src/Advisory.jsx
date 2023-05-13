@@ -68,6 +68,7 @@ const Advisory = function (props) {
                 ? 'Loading...'
                 : 'Generate AI advisory'}
             </button>
+            
           </div>
         </div>
         {generatedText ? <ResponseCard data={generatedText} /> : null}
