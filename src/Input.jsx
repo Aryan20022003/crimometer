@@ -55,7 +55,7 @@ function Form() {
                   setplace(e.target.value.toLocaleLowerCase().trim())
                 }
               />
-              <labe className="inline-block text-2xl">Month</labe>
+              <label className="inline-block text-2xl">Month</label>
               <select
                 defaultValue={'1'}
                 className="select select-success w-full mb-3"

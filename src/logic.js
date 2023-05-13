@@ -22,9 +22,11 @@ export default async function getCrimeData(location, month) {
   const crimeDiscription = {};
   const crimeCounts = data.reduce((counts, crime) => {
     counts[crime.crimetype] = (counts[crime.crimetype] || 0) + 1;
-    crimeDiscription[crime.crimetype] = (
-      crimeDiscription[crime.crimetype] || []
-    ).push(crime.description);
+    if (!crimeDiscription[crime.crimetype]) {
+      crimeDiscription[crime.crimetype] = [crime.description];
+    } else {
+      crimeDiscription[crime.crimetype].push(crime.description);
+    }
     return counts;
   }, {});
 

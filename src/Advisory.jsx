@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Record from './List';
 import generateTravelAdvisory from './getAPI';
 import ResponseCard from './ResponseCard';
@@ -24,9 +25,8 @@ const Advisory = function (props) {
 
   if (totalCrimes === 0) {
     return (
-      <h3 className="text-5xl text-gray-400 text-center pt-5 pb-5">{`No crime during ${
-        monthNames[month - 1]
-      }`}</h3>
+      <h3 className="text-5xl text-gray-400 text-center pt-5 pb-5">{`No crime during ${monthNames[month - 1]
+        }`}</h3>
     );
   }
 
@@ -44,6 +44,10 @@ const Advisory = function (props) {
     } // Set loading to false on fetch end
   };
 
+  //for sending data to another component as react router is not working
+  const data = props.data;
+  localStorage.setItem('data', JSON.stringify(data));
+
   return (
     <section className="p-4 mt-" style={{ background: '#141e30' }}>
       <h3 className="text-5xl text-gray-400 pb-3 text-center">
@@ -56,19 +60,19 @@ const Advisory = function (props) {
             # once you click Generate Advisory wait around 1 minutes to get
             Advisory
           </p>
-          <div className="flex justify-center">
+          <div className="flex justify-center gap-2">
             <button
-              className="btn btn-success btn-accent"
+              className="btn btn-success btn-accent flex-shrink"
               onClick={fetchTravelAdvisory}
               disabled={loading || generated}
             >
               {generated
                 ? 'AI Advisory already generated'
                 : loading
-                ? 'Loading...'
-                : 'Generate AI advisory'}
+                  ? 'Loading...'
+                  : 'Generate AI advisory'}
             </button>
-            
+            <Link to="/detailedReport" className="btn btn-success btn-accent flex-shrink">Get Detailed Report</Link>
           </div>
         </div>
         {generatedText ? <ResponseCard data={generatedText} /> : null}
