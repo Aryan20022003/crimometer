@@ -32,7 +32,7 @@ const Home = () => {
             </p>
           </blockquote>
           <Link to="/generate">
-            <button className="btn btn-success mt-4 rounded-full">
+            <button className="btn btn-success mt-2 md:mt-4 rounded-full">
               Try Crimometer
             </button>
           </Link>
@@ -41,7 +41,7 @@ const Home = () => {
           <LottieAnimation />
         </div>
       </section>
-      <footer style={{ textAlign: 'center' }}>
+      <footer className='pt-3' style={{ textAlign: 'center' }}>
         Designed and developed by{' '}
         <a
           href="https://github.com/Arnabdaz"
