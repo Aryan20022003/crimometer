@@ -1,28 +1,30 @@
-import supabase from './supaBase';
+import supabase from "./supaBase";
 
 // fetch from supabase
 
 export default async function getCrimeData(location, month) {
   // Query crime data for the specified location and month, regardless of the year
   const { data, error } = await supabase
-    .from('crimedata')
-    .select('*')
-    .eq('location', location)
-    .eq('month', month);
+    .from("crimedata")
+    .select("*")
+    .eq("location", location)
+    .eq("month", month);
 
   if (error) {
-    console.error('Error fetching crime data:', error);
+    console.error("Error fetching crime data:", error);
     return;
   }
 
   // Log the fetched data
-  console.log('Fetched data:', data);
+  console.log("Fetched data:", data);
 
   // Calculate total crimes and crime counts per category
-  const crimeDiscription={};
+  const crimeDiscription = {};
   const crimeCounts = data.reduce((counts, crime) => {
     counts[crime.crimetype] = (counts[crime.crimetype] || 0) + 1;
-    crimeDiscription[crime.crimetype]=(crimeDiscription[crime.crimetype] || []).push(crime.description);
+    crimeDiscription[crime.crimetype] = (
+      crimeDiscription[crime.crimetype] || []
+    ).push(crime.description);
     return counts;
   }, {});
 
@@ -40,6 +42,6 @@ export default async function getCrimeData(location, month) {
     month,
     totalCrimes,
     crimes,
-    crimeDiscription
+    crimeDiscription,
   };
 }
