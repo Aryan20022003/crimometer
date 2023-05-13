@@ -31,7 +31,7 @@ const Top = function (props: Props): JSX.Element {
             </div>
             <div className="stat place-items-center">
                 <div className="stat-title">Case Count</div>
-                <div className="stat-value text-secondary text-orange-300">{props.totalCrimes}</div>
+                <div className="stat-value text-red-200">{props.totalCrimes}</div>
             </div>
         </div>
     );

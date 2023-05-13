@@ -20,7 +20,7 @@ const DataBlock = function (props: Props): JSX.Element {
             return (
                 <div
                     tabIndex={0}
-                    className="collapse border border-base-300 bg-base-100 rounded-box bg-[#223b688e]"
+                    className="collapse border border-base-300 bg-base-100 rounded-box bg-[#32549571]"
                     key={key}
                 >
                     <div className="collapse-title text-xl font-semibold text-stone-300">
