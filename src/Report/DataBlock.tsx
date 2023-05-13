@@ -7,7 +7,7 @@ type Props = {
 const DataBlock = function (props: Props): JSX.Element {
     if (!Object.keys(props.crimeDiscription).length) {
         return (
-            <div className="border border-base-300 bg-base-100 rounded-box bg-[#19366dc5]">
+            <div className="border border-base-300 bg-base-100 rounded-box bg-[#19366d86]">
                 <p className="text-xl font-semibold text-stone-300">
                     No criminal record is available. Enjoy the safety.
                 </p>
@@ -20,7 +20,7 @@ const DataBlock = function (props: Props): JSX.Element {
             return (
                 <div
                     tabIndex={0}
-                    className="collapse border border-base-300 bg-base-100 rounded-box bg-[#19366dc5]"
+                    className="collapse border border-base-300 bg-base-100 rounded-box bg-[#223b688e]"
                     key={key}
                 >
                     <div className="collapse-title text-xl font-semibold text-stone-300">

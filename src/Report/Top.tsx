@@ -23,7 +23,7 @@ type Props = {
 
 const Top = function (props: Props): JSX.Element {
     return (
-        <div className="stats shadow bg-[#19376D]">
+        <div className="stats shadow bg-[#19366d5d]">
             <div className="stat place-items-center text-gray-300">
                 <div className="stat-title">Place</div>
                 <div className="stat-value">{props.location.toUpperCase()}</div>

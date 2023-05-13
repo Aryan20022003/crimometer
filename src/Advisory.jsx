@@ -60,7 +60,7 @@ const Advisory = function (props) {
             # once you click Generate Advisory wait around 1 minutes to get
             Advisory
           </p>
-          <div className="flex justify-center gap-2">
+          <div className="flex justify-center gap-2 md:gap-6">
             <button
               className="btn btn-success btn-accent flex-shrink"
               onClick={fetchTravelAdvisory}
