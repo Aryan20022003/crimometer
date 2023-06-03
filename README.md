@@ -10,8 +10,6 @@ CrimoMeter is an application designed to help you detect the safety of a place b
 - Make informed decisions about your travel plans
 - Generate circular / advisory for desired place out of the crime information.
 
-## For tesing purposes you can try Delhi as location with the month of april.
-
 ## Technologies Used
 
 - Create React App
